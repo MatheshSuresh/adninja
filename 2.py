@@ -9,10 +9,10 @@ def firebase():
 
     store = firestore.client()
 
-    users_ref = store.collection(u'Coimbatore').document(u'01')
-	
+    users_ref = store.collection(u'Videos').document(u'02')
+
     try:
-        user = users_ref.get({u'media01'})
+        user = users_ref.get()
         sample_data=(u'{}'.format(user.to_dict()))
         f= True
         link = ''
@@ -31,7 +31,7 @@ def firebase():
 def download(url):
     import urllib.request
     print(url)
-    urllib.request.urlretrieve(url,'4.mp4')
+    urllib.request.urlretrieve(url,'2.mp4')
 
 def main():
         firebase()
